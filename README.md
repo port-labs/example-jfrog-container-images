@@ -2,7 +2,7 @@
 Python Script for Ingesting JFrog Artifacts and Builds in Port
 
 ## Getting started
-In this example, you will create blueprints for `jfrog_build` and `jfrog-repository` that ingests builds and repositories from your Jfrog installation into Port. You will then use a Python script to make API calls to Jfrog's REST API to fetch the data from your account.
+In this example, you will create blueprints for `jfrog_build` and `jfrog_repository` that ingests builds and repositories from your Jfrog installation into Port. You will then use a Python script to make API calls to Jfrog's REST API to fetch the data from your account.
 
 ### Blueprints
 Create the following blueprints in Port using the schemas:
