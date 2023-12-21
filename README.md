@@ -10,7 +10,7 @@ Create the following blueprints in Port using the schemas:
 #### Build
 ```json
 {
-  "identifier": "jfrog_build",
+  "identifier": "jfrogBuild",
   "description": "This blueprint represents a build from JFrog",
   "title": "Jfrog Build",
   "icon": "JfrogXray",
@@ -40,7 +40,7 @@ Create the following blueprints in Port using the schemas:
 #### Repository
 ```json
 {
-  "identifier": "jfrog_repository",
+  "identifier": "jfrogRepository",
   "description": "This blueprint represents a repository on Jfrog",
   "title": "Jfrog Repository",
   "icon": "JfrogXray",

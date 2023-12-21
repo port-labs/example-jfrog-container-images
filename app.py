@@ -16,8 +16,8 @@ JFROG_HOST_URL = os.getenv("JFROG_HOST_URL")
 
 
 class Blueprint:
-    REPOSITORY = "jfrog_repository"
-    BUILD = "jfrog_build"
+    REPOSITORY = "jfrogRepository"
+    BUILD = "jfrogBuild"
 
 
 ## Get Port Access Token
@@ -91,7 +91,7 @@ if __name__ == "__main__":
             "description": repository.get("description", ""),
             "type": repository["type"].upper(),
             "url": repository["url"],
-            "package_type": repository["packageType"].upper(),
+            "packageType": repository["packageType"].upper(),
         }
         transform_build_function = lambda x: {
             "identifier": repository_object["key"],
@@ -108,15 +108,16 @@ if __name__ == "__main__":
     logger.info("Completed repositories, starting builds")
     for build in get_all_builds():
         build_object = {
+            "name": build["uri"].split("/")[-1],
             "uri": build["uri"],
-            "last_started": build["lastStarted"],
+            "lastStarted": build["lastStarted"],
         }
         transform_build_function = lambda x: {
-            "identifier": build_object["uri"],
-            "title": build_object["uri"].split("/")[-1],
+            "identifier": build_object["name"],
+            "title": build_object["name"],
             "properties": {
                 **build_object,
             },
         }
-        logger.info(f"Added build: {build_object['uri']}")
+        logger.info(f"Added build: {build_object['name']}")
         add_entity_to_port(Blueprint.BUILD, build_object, transform_build_function)
