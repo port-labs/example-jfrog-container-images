@@ -12,7 +12,7 @@ Create the following blueprints in Port using the schemas:
 {
   "identifier": "jfrogBuild",
   "description": "This blueprint represents a build from JFrog",
-  "title": "Jfrog Build",
+  "title": "JFrog Build",
   "icon": "JfrogXray",
   "schema": {
     "properties": {
@@ -21,7 +21,12 @@ Create the following blueprints in Port using the schemas:
         "title": "Build URI",
         "description": "URI to the build"
       },
-      "last_started": {
+      "name": {
+        "type": "string",
+        "title": "Build name",
+        "description": "Name of the build"
+      },
+      "lastStarted": {
         "type": "string",
         "title": "Last build time",
         "description": "Last time the build ran",
@@ -42,7 +47,7 @@ Create the following blueprints in Port using the schemas:
 {
   "identifier": "jfrogRepository",
   "description": "This blueprint represents a repository on Jfrog",
-  "title": "Jfrog Repository",
+  "title": "JFrog Repository",
   "icon": "JfrogXray",
   "schema": {
     "properties": {
@@ -81,7 +86,7 @@ Create the following blueprints in Port using the schemas:
         "description": "URL to the repository",
         "format": "url"
       },
-      "package_type": {
+      "packageType": {
         "type": "string",
         "title": "Package type",
         "description": "Type of the package"

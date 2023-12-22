@@ -15,9 +15,8 @@ JFROG_ACCESS_TOKEN = os.getenv("JFROG_ACCESS_TOKEN")
 JFROG_HOST_URL = os.getenv("JFROG_HOST_URL")
 
 
-class Blueprint:
-    REPOSITORY = "jfrogRepository"
-    BUILD = "jfrogBuild"
+REPOSITORY_BLUEPRINT = "jfrogRepository"
+BUILD_BLUEPRINT = "jfrogBuild"
 
 
 ## Get Port Access Token
@@ -102,7 +101,7 @@ if __name__ == "__main__":
         }
         logger.info(f"Added repository: {repository_object['key']}")
         add_entity_to_port(
-            Blueprint.REPOSITORY, repository_object, transform_build_function
+            REPOSITORY_BLUEPRINT, repository_object, transform_build_function
         )
 
     logger.info("Completed repositories, starting builds")
@@ -120,4 +119,4 @@ if __name__ == "__main__":
             },
         }
         logger.info(f"Added build: {build_object['name']}")
-        add_entity_to_port(Blueprint.BUILD, build_object, transform_build_function)
+        add_entity_to_port(BUILD_BLUEPRINT, build_object, transform_build_function)
